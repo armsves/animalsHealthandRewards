@@ -1,3 +1,3 @@
 export {
-    MessageBox, MessageBox__factory,
+    AnimalHealth, AnimalHealth__factory,
 } from "../typechain-types"

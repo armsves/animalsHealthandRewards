@@ -1,4 +1,4 @@
-import ABI from '../../../backend/abis/MessageBox.json'
+import ABI from '../../../backend/abis/AnimalHealth.json'
 import { UseReadContractReturnType } from 'wagmi'
 const { VITE_MESSAGE_BOX_ADDR } = import.meta.env
 

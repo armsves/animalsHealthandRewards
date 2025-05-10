@@ -1,0 +1,9 @@
+services:
+  script-runner:
+    image: "ghcr.io/armsves/princessrewards"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PRIVATE_KEY=${PRIVATE_KEY} # Pass PRIVATE_KEY from the host environment
+    working_dir: /princessRewards

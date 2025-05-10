@@ -47,13 +47,13 @@ task('deploy')
     // For deployment unwrap the provider to enable contract verification.
     const uwProvider = new JsonRpcProvider(hre.network.config.url)
     const MessageBox = await hre.ethers.getContractFactory(
-      'MessageBox',
+      'AnimalHealth',
       new hre.ethers.Wallet(accounts[0], uwProvider)
     )
     const messageBox = await MessageBox.deploy(args.domain)
     await messageBox.waitForDeployment()
 
-    console.log(`MessageBox address: ${await messageBox.getAddress()}`)
+    console.log(`AnimalHealth address: ${await messageBox.getAddress()}`)
     return messageBox
   })
 
