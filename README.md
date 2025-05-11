@@ -122,3 +122,16 @@ pnpm build-only --base=/my/public/path/
 ```
 
 Then copy the `dist` folder to a place of your `/my/public/path` location.
+
+## Princess Rewards ROFL
+Enter the PrincessRewards and execute
+docker compose build
+docker compose push
+oasis rofl init
+oasis rofl create
+export PRIVATE_KEY=aa...
+echo -n "$PRIVATE_KEY" | oasis rofl secret set PRIVATE_KEY -
+oasis rofl build
+oasis rofl update
+chmod 777 princessRewards.default.orc 
+oasis rofl deploy
