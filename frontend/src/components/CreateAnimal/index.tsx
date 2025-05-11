@@ -3,15 +3,15 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { useWaitForTransactionReceipt, useWriteContract } from 'wagmi'
 import { WAGMI_CONTRACT_CONFIG } from '../../constants/config'
-import classes from '../../pages/HomePage/index.module.css'
+import classes from './index.module.css'
 
 interface CreateAnimalProps {
-  onAnimalCreated?: () => void;
+  onAnimalCreated?: () => void
 }
 
 export const CreateAnimal: FC<CreateAnimalProps> = ({ onAnimalCreated }) => {
   const [animalName, setAnimalName] = useState<string>('')
-  const [animalImage, setAnimalImage] = useState<string>('https://example.com/placeholder.png')
+  const [animalImage, setAnimalImage] = useState<string>('')
   const [animalAge, setAnimalAge] = useState<number>(0)
   const [messageValueError, setMessageValueError] = useState<string>()
 
@@ -22,7 +22,7 @@ export const CreateAnimal: FC<CreateAnimalProps> = ({ onAnimalCreated }) => {
     isError: isWriteContractError,
     error: writeContractError,
   } = useWriteContract()
-  
+
   const {
     isPending: isTransactionReceiptPending,
     isSuccess: isTransactionReceiptSuccess,
@@ -40,7 +40,7 @@ export const CreateAnimal: FC<CreateAnimalProps> = ({ onAnimalCreated }) => {
       setAnimalName('')
       setAnimalImage('https://example.com/placeholder.png')
       setAnimalAge(0)
-      
+
       // Notify parent component if callback provided
       if (onAnimalCreated) {
         onAnimalCreated()
@@ -51,57 +51,60 @@ export const CreateAnimal: FC<CreateAnimalProps> = ({ onAnimalCreated }) => {
   }, [isTransactionReceiptSuccess, isTransactionReceiptError, isWriteContractError])
 
   const handleSetMessage = async () => {
-    setMessageValueError(undefined);
-  
+    setMessageValueError(undefined)
+
     if (!animalName) {
-      setMessageValueError('Animal name is required!');
-      return;
+      setMessageValueError('Animal name is required!')
+      return
     }
-  
+
     await writeContract({
       ...WAGMI_CONTRACT_CONFIG,
       functionName: 'createAnimal',
       args: [animalName, animalImage, animalAge],
-    });
+    })
   }
 
   return (
-    <div className={classes.createAnimalSection}>
-      <h3>Create New Animal</h3>
-      <p>Create a new animal record by filling the fields below.</p>
-      
-      <div className={classes.setMessageText}>
-        <h4>Animal Name</h4>
+    <div className={classes.createAnimalContainer}>
+      <h2 className={classes.title}>Create New Animal</h2>
+      <p className={classes.description}>Fill in the details below to create a new animal record.</p>
+
+      <div className={classes.inputGroup}>
+        <label htmlFor="animalName" className={classes.label}>
+          Animal Name
+        </label>
+        <Input
+          value={animalName}
+          onChange={setAnimalName}
+          error={messageValueError}
+          disabled={isInteractingWithChain}
+        />
       </div>
-      <Input
-        value={animalName}
-        label="Name"
-        onChange={setAnimalName}
-        error={messageValueError}
-        disabled={isInteractingWithChain}
-      />
-      
-      <div className={classes.setMessageText}>
-        <h4>Animal Image URL</h4>
+
+      <div className={classes.inputGroup}>
+        <label htmlFor="animalImage" className={classes.label}>
+          Animal Image URL
+        </label>
+        <Input
+          value={animalImage}
+          onChange={setAnimalImage}
+          disabled={isInteractingWithChain}
+        />
       </div>
-      <Input
-        value={animalImage}
-        label="Image URL"
-        onChange={setAnimalImage}
-        disabled={isInteractingWithChain}
-      />
-      
-      <div className={classes.setMessageText}>
-        <h4>Animal Age</h4>
+
+      <div className={classes.inputGroup}>
+        <label htmlFor="animalAge" className={classes.label}>
+          Animal Age
+        </label>
+        <Input
+          value={animalAge.toString()}
+          onChange={(value) => setAnimalAge(Number(value))}
+          disabled={isInteractingWithChain}
+        />
       </div>
-      <Input
-        value={animalAge.toString()}
-        label="Age"
-        onChange={(value) => setAnimalAge(Number(value))}
-        disabled={isInteractingWithChain}
-      />
-      
-      <div className={classes.setMessageActions}>
+
+      <div className={classes.actions}>
         <Button disabled={isInteractingWithChain} onClick={handleSetMessage}>
           {isInteractingWithChain ? 'Please wait...' : 'Create Animal'}
         </Button>

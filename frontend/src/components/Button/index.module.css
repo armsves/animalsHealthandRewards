@@ -45,8 +45,8 @@
 
 .buttonSolid {
   &.buttonPrimary {
-    background-color: var(--brand-extra-dark);
-    color: var(--white);
+    background-color: #caefcf;
+   
     border: 1px var(--white) solid;
   }
 

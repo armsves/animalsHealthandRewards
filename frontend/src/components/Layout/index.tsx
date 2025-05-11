@@ -1,12 +1,11 @@
 import { FC } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import classes from './index.module.css'
 import { Alert } from '../Alert'
 import { useAppState } from '../../hooks/useAppState'
 import { Button } from '../Button'
 import { StringUtils } from '../../utils/string.utils'
 import { LayoutBase } from '../LayoutBase'
-import { LogoIcon } from '../icons/LogoIcon'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export const Layout: FC = () => {
@@ -19,7 +18,10 @@ export const Layout: FC = () => {
     <LayoutBase
       header={
         <header className={classes.header}>
-          <LogoIcon />
+          <Link to="/" className={classes.logoLink}>
+            <img src="/farea_logo.png" alt="Farea Logo" height="80" className={classes.logo} />
+          </Link>
+          <span className={classes.HeaderText}>Animal Health Records</span>
           <ConnectButton />
         </header>
       }

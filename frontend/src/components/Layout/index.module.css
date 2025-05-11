@@ -3,7 +3,8 @@
   justify-content: space-between;
   vertical-align: middle;
   align-items: center;
-  padding: 3.125rem 3.125rem 2.5rem;
+  padding: 0.5rem;
+  background-color: #4A90E2;
 }
 
 .headerLink {
@@ -24,4 +25,22 @@
   .mainSection {
     display: block;
   }
+}
+
+.HeaderText {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--white);
+  text-align: center;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  border-radius: 15px; /* Add rounded corners */
+  transition: transform 0.2s; /* Optional: Add a hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
 }

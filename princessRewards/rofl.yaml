@@ -17,14 +17,14 @@ artifacts:
     compose: docker-compose.yaml
 deployments:
   default:
-    app_id: rofl1qz7dr8mug4e7wzf0z578vyhgugq2ewvu4v6y8fzm
+    app_id: rofl1qphkxvyh35gvfysn04vhmp5q3ya470kprs6gz2yw
     network: testnet
     paratime: sapphire
-    admin: ethdam
-    oci_repository: rofl.sh/56483501-6be4-47ab-bd3f-bf2b763c2a78:1746916235
+    admin: acc11
+    oci_repository: rofl.sh/fa56cdfc-32fb-4b7e-b850-da62e27665e2:1746939401
     trust_root:
-      height: 26538730
-      hash: 002196eab07aa042264343e836731572c9972aa2f083362fec985df1d8ca27c4
+      height: 26542716
+      hash: 171478a2bb95ce9c8285169a8a06daf272c53084f026f7507c43270caa34f5c9
     policy:
       quotes:
         pcs:
@@ -32,16 +32,17 @@ deployments:
           min_tcb_evaluation_data_number: 18
           tdx: {}
       enclaves:
-        - id: zAV8tJYVfxxayRuONsZR2ZsF1aLVVWmKThuNnLo0j8oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
-        - id: NajVT5sZBFnGShFlO31b8ZdzAZ18o0Y7avREQCDPf7cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+        - id: zsLf0CMW9mfF7jX7YMz1wi1s+mbV8t7rave/Y+s+Xj4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+        - id: HFGvRZNIWVB9kft95FhnlwHHLMsUA25d6lPHOlAqRp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
       endorsements:
         - any: {}
       fees: endorsing_node
       max_expiration: 3
     secrets:
       - name: PRIVATE_KEY
-        value: pGJwa1ggskQLcM9+yHPBvKD5mlfGoJTiv8vFoy3n9WqSKSd55y1kbmFtZVgbNffmYPwZ1RQw3tne5U2pIYejgmdFafXg29kQZW5vbmNlT4juA+jNk5uH5Xwxg7NZvmV2YWx1ZVhQ4rXW/g2uaEe80RO8VtoBn65K2cZo7D8HeNQ0pLgbMYIVF0fk7wDatUHV5UJpNifB+mUHZxOV+CM818OsskfZ+6IDrdaD0G+ovVAZNTPnGdM=
+        value: pGJwa1gga9f+iMsSypoZMjG3AtvoLgwNea+sJb6RxPgmmV/8RBFkbmFtZVgbJHC/BKgqw+ex84F1SR7RYVXD8frlx5STkaARZW5vbmNlT5GaGVunmOVEB+VpR1zt4WV2YWx1ZVhQSrWsAX9N24t+ugwbLtv0cCJUgKlMGFLiCqW4yKPyLgu/2iMs797GHFS7CXYZJVVCiXvo4Z1Hbu9+nH8QdI2pqFol9e9FQBNv4ZAwlIXg6IQ=
     machines:
       default:
         provider: oasis1qp2ens0hsp7gh23wajxa4hpetkdek3swyyulyrmz
         offer: playground_short
+        id: "0000000000000074"

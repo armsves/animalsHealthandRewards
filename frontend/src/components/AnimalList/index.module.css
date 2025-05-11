@@ -1,0 +1,87 @@
+.animalListContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fdf4d4; /* Light yellow background */
+  border: 2px solid #c3ab23; /* Golden border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.actionButtons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.animalsList {
+  margin-top: 20px;
+}
+
+.animalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.animalCard {
+  padding: 10px;
+  border: 2px solid #c3ab23;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.animalCard:hover {
+  transform: scale(1.05);
+  background-color: #f5e6b3;
+}
+
+.selectedAnimal {
+  background-color: #c3ab23;
+  color: #fff;
+}
+
+.animalDetails {
+  margin-top: 20px;
+}
+
+.detailRow {
+  margin-bottom: 10px;
+}
+
+.imageContainer {
+  margin-top: 10px;
+}
+
+.animalImage {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.healthRecords {
+  margin-top: 20px;
+}
+
+.addHealthRecordSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

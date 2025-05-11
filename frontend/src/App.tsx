@@ -2,6 +2,9 @@ import { FC } from 'react'
 import { Layout } from './components/Layout'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
+import { AnimalListPage } from './pages/AnimalListPage'
+import { CreateAnimalPage } from './pages/CreateAnimalPage'
+import { RewardsPage } from './pages/RewardsPage'
 import { Web3AuthContextProvider } from './providers/Web3AuthProvider'
 import { AppStateContextProvider } from './providers/AppStateProvider'
 import { ErrorBoundary } from './components/ErrorBoundary'
@@ -39,6 +42,18 @@ const router = createHashRouter([
       {
         path: '/',
         element: <HomePage />,
+      },
+      {
+        path: '/animal-list',
+        element: <AnimalListPage />, // Route for AnimalListPage
+      },
+      {
+        path: '/create-animal',
+        element: <CreateAnimalPage />, // Route for CreateAnimalPage
+      },
+      {
+        path: '/rewards', // Add the new route for RewardsPage
+        element: <RewardsPage />,
       },
       {
         path: '*',

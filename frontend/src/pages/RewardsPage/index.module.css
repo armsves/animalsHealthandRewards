@@ -1,0 +1,59 @@
+.rewardsPage {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fdf4d4; /* Light yellow background */
+  border: 2px solid #c3ab23; /* Golden border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+.rewardList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.rewardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #c3ab23;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.processButton {
+  background-color: #c3ab23;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.processButton:hover {
+  background-color: #a8901c;
+}
+
+.processButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

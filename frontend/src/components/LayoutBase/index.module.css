@@ -19,14 +19,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem 2rem;
+  padding: 1rem;
   color: var(--white);
+  background-color: #4A90E2;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
   margin: 0 auto;
   width: 100%;
-  max-width: 1076px;
+  
 
   :is(a) {
     color: var(--white);
@@ -62,4 +64,24 @@
     color: var(--white);
     text-decoration: none;
   }
+}
+
+
+
+
+.footerLogo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.2s;
+}
+
+.footerLogo:hover {
+  transform: scale(1.1);
+}
+
+.footerText {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--white);
+  text-align: center;
 }
